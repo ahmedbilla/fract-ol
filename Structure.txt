@@ -1,0 +1,26 @@
+fractol/
+├── src/
+│   ├── main.c                  # Entry point of the program
+│   ├── init.c                  # Initialization functions (e.g., setup MLX, window)
+│   ├── input.c                 # Handle user inputs (keyboard/mouse)
+│   ├── render.c                # Rendering logic for fractals
+│   ├── fractals/
+│   │   ├── mandelbrot.c        # Mandelbrot set calculations
+│   │   ├── julia.c             # Julia set calculations
+│   │   ├── burning_ship.c      # Burning Ship fractal
+│   │   └── fractal_utils.c     # Shared utilities for fractal calculations
+│   └── utils/
+│       ├── color.c             # Functions to handle coloring logic
+│       ├── math_utils.c        # Helper math functions
+│       └── error.c             # Error handling functions
+├── include/
+│   ├── fractol.h               # Main header file with function prototypes and structs
+│   ├── mlx.h                   # MiniLibX library header (if applicable)
+│   └── keys.h                  # Keycodes for different OS (macOS/Linux)
+├── lib/
+│   ├── libft/                  # Your custom libft library
+│   └── minilibx/               # MiniLibX library (graphics library)
+├── assets/                     # (Optional) Store assets like images or configurations
+├── Makefile                    # Makefile to build the project
+├── README.md                   # Documentation for the project
+└── .gitignore                  # Ignore unnecessary files for Git
