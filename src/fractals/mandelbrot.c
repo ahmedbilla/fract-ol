@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 23:35:51 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/01/26 19:43:57 by ahbilla          ###   ########.fr       */
+/*   Created: 2025/02/01 20:32:32 by ahbilla           #+#    #+#             */
+/*   Updated: 2025/02/01 20:33:22 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int close_window(int keycode)
+int mandelbrot(t_fractol *fractol)
 {
-    if (keycode == 53)
-    {
-        write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-        exit(0);
-    }
-    return 0;
-}
-
-int close_cross(t_fractol *fract)
-{
-    mlx_destroy_window(fract->mlx, fract->mlx_window);
-    write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-    exit(1);
+    
 }

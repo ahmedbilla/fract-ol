@@ -6,13 +6,12 @@
 #    By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 21:53:47 by ahbilla           #+#    #+#              #
-#    Updated: 2025/01/25 23:38:34 by ahbilla          ###   ########.fr        #
+#    Updated: 2025/01/31 22:12:09 by ahbilla          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = src/fractol.c src/window/init.c src/utils/ft_putstr.c src/parsing/user_interface.c\
-	src/utils/ft_strcmp.c src/window/close_window.c
-
+	src/utils/ft_strcmp.c src/window/close_window.c src/fractals/julia.c src/window/controler.c\
 
 	
 	
@@ -22,7 +21,7 @@ OBJS = ${SRCS:.c=.o}
 NAME = fractol
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -g
+# CFLAGS = -Wall -Wextra -Werror -g
 
 all: ${NAME}
 
