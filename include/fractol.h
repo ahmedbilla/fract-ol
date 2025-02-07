@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:44:11 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 15:11:53 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/07 15:28:35 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct fractol
 {
     void *mlx;
     void *mlx_window;
-    // void    *img;
+    void    *img;
     double x_min;
     double x_max;
     double y_min;
