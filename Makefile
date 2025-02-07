@@ -6,12 +6,13 @@
 #    By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 21:53:47 by ahbilla           #+#    #+#              #
-#    Updated: 2025/01/31 22:12:09 by ahbilla          ###   ########.fr        #
+#    Updated: 2025/02/06 17:28:04 by ahbilla          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = src/fractol.c src/window/init.c src/utils/ft_putstr.c src/parsing/user_interface.c\
-	src/utils/ft_strcmp.c src/window/close_window.c src/fractals/julia.c src/window/controler.c\
+	src/utils/ft_strcmp.c src/window/close_window.c src/fractals/julia.c src/fractals/mandelbrot.c\
+	src/window/controler.c\
 
 	
 	

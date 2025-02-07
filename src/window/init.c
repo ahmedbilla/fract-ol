@@ -22,9 +22,13 @@ int create_window(t_fractol *fractol, char *av[])
         return 1;
     mlx_key_hook(fractol->mlx_window, &close_window, NULL);
     mlx_hook(fractol->mlx_window, 17, 0, &close_cross, fractol);
-    julia(fractol);
-    // mlx_loop_hook();
-    controler(fractol);
+    // if (ft_strcmp(*av, "mandelbrot") == 0 )
+    
+    // {
+        mandelbrot(fractol);
+        controler(fractol);
+    // }
+
     mlx_loop(fractol->mlx);
     return 0;
 }

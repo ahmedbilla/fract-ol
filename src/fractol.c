@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:42:45 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/01/31 21:56:05 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/06 22:22:30 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main(int ac, char *av[])
 {
+	int flag = 0;
 	if (ac == 2 && (ft_strcmp(av[1], "mandelbrot") == 0 || ft_strcmp(av[1], "julia") == 0))
 	{
 			t_fractol fractol;
