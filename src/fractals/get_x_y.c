@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   get_x_y.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 23:35:51 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 18:03:04 by ahbilla          ###   ########.fr       */
+/*   Created: 2025/02/07 19:18:53 by ahbilla           #+#    #+#             */
+/*   Updated: 2025/02/08 16:21:03 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int close_window(int keycode)
+double get_x(double j, t_fractol *fractol)
 {
-    if (keycode == 53)
-    {
-        write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-        exit(0);
-    }
-    return 0;
+    return (fractol->x_min + (j / 800.00) * (fractol->x_max - fractol->x_min));
 }
 
-int close_cross(t_fractol *fract)
+double get_y(double i, t_fractol *fractol)
 {
-    mlx_destroy_window(fract->mlx, fract->mlx_window);
-    write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-    exit(1);
+    return (fractol->y_max - (i / 800.00) * (fractol->y_max - fractol->y_min));
 }

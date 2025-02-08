@@ -12,8 +12,12 @@
 
 #include "../../include/fractol.h"
 
-int create_window(t_fractol *fractol, char *av[])
+int create_window(t_fractol *fractol, char *av[], double first, double second)
 {
+    // t_param data;
+
+
+    printf("%f\n", first);
     fractol->widht = 800;
     fractol->height = 800;
     fractol->mlx = mlx_init();
@@ -22,13 +26,11 @@ int create_window(t_fractol *fractol, char *av[])
         return 1;
     mlx_key_hook(fractol->mlx_window, &close_window, NULL);
     mlx_hook(fractol->mlx_window, 17, 0, &close_cross, fractol);
-    // if (ft_strcmp(*av, "mandelbrot") == 0 )
-    
-    // {
+    if (ft_strcmp(*av, "mandelbrot") == 0)
         mandelbrot(fractol);
-        controler(fractol);
-    // }
-
+    else if (ft_strcmp(*av, "julia") == 0)
+        julia(fractol);
+    controler(fractol);
     mlx_loop(fractol->mlx);
     return 0;
 }

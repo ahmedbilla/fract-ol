@@ -6,14 +6,11 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 19:14:02 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 15:11:45 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/08 18:23:06 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
-
-#define ZOOM_IN 4
-#define ZOOM_OUT 5
 
 int zoom(int button, int x, int y, t_fractol *fractol)
 {
@@ -30,7 +27,8 @@ int zoom(int button, int x, int y, t_fractol *fractol)
     fractol->x_max *=    zoom;
     fractol->y_min *=    zoom;
     fractol->y_max *=   zoom;
-    mandelbrot(fractol);  
+    // mandelbrot(fractol);  
+    julia(fractol);
     return (0);
 }
 int controler(t_fractol *fractol)

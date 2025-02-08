@@ -12,6 +12,9 @@
         "vector": "c",
         "stdio.h": "c",
         "ios": "c",
-        "ostream": "c"
+        "ostream": "c",
+        "memory": "c",
+        "utility": "c",
+        "complex": "c"
     }
 }

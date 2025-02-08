@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   get_color.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 23:35:51 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 18:03:04 by ahbilla          ###   ########.fr       */
+/*   Created: 2025/02/07 20:34:25 by ahbilla           #+#    #+#             */
+/*   Updated: 2025/02/08 16:32:15 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int close_window(int keycode)
+int get_color(int x)
 {
-    if (keycode == 53)
-    {
-        write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-        exit(0);
-    }
-    return 0;
-}
-
-int close_cross(t_fractol *fract)
-{
-    mlx_destroy_window(fract->mlx, fract->mlx_window);
-    write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-    exit(1);
+    if (x == 70)
+        return (0);
+    else
+        return ((x * 255) / 70) << 10;
 }

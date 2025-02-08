@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   put_pixel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 23:35:51 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 18:03:04 by ahbilla          ###   ########.fr       */
+/*   Created: 2025/02/07 20:37:03 by ahbilla           #+#    #+#             */
+/*   Updated: 2025/02/07 20:37:16 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-int close_window(int keycode)
+void my_mlx_pixel_put(t_fractol *data, int x, int y, int color)
 {
-    if (keycode == 53)
-    {
-        write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-        exit(0);
-    }
-    return 0;
-}
+    char *dst;
 
-int close_cross(t_fractol *fract)
-{
-    mlx_destroy_window(fract->mlx, fract->mlx_window);
-    write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-    exit(1);
+    if (x >= 0 && x < data->widht && y >= 0 && y < data->height)
+    {
+        dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+        *(unsigned int *)dst = color;
+    }
 }

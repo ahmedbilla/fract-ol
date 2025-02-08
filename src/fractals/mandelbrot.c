@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:32:32 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/07 16:29:10 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/07 22:32:13 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,34 @@ int mandelbrot_iteration(t_fractol *fractol)
     }
     return i;
 }
-double get_x(double j, t_fractol *fractol)
-{
-    return (fractol->x_min + (j / 800.00) * (fractol->x_max - fractol->x_min));
-}
+// double get_x(double j, t_fractol *fractol)
+// {
+//     return (fractol->x_min + (j / 800.00) * (fractol->x_max - fractol->x_min));
+// }
 
-double get_y(double i, t_fractol *fractol)
-{
-    return (fractol->y_max - (i / 800.00) * (fractol->y_max - fractol->y_min));
-}
-int get_color(int x)
-{
-    if (x == 70)
-        return (0);
-    else
-        return ((x * 255) / 70) << 10;
-}
+// double get_y(double i, t_fractol *fractol)
+// {
+//     return (fractol->y_max - (i / 800.00) * (fractol->y_max - fractol->y_min));
+// }
+// int get_color(int x)
+// {
+//     if (x == 70)
+//         return (0);
+//     else
+//         return ((x * 255) / 70) << 10;
+// }
 
-void my_mlx_pixel_put(t_fractol *data, int x, int y, int color)
-{
-    char *dst;
+// void my_mlx_pixel_pute(t_fractol *data, int x, int y, int color)
+// {
+//     char *dst;
 
- if (x >= 0 && x < data->widht && y >= 0 && y < data->height)
-{
-    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-    *(unsigned int *)dst = color;
-}
+//  if (x >= 0 && x < data->widht && y >= 0 && y < data->height)
+// {
+//     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+//     *(unsigned int *)dst = color;
+// }
 
-}
+// }
 int mandelbrot(t_fractol *fractol)
 {
     double i = 0, j;
