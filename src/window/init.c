@@ -12,12 +12,8 @@
 
 #include "../../include/fractol.h"
 
-int create_window(t_fractol *fractol, char *av[], double first, double second)
+int create_window(t_fractol *fractol, char *av[])
 {
-    // t_param data;
-
-
-    printf("%f\n", first);
     fractol->widht = 800;
     fractol->height = 800;
     fractol->mlx = mlx_init();

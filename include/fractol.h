@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:44:11 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/08 18:22:40 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/08 22:12:28 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,13 @@ typedef struct fractol
     int line_length;
     int bits_per_pixel;
     int endian;
+    double first;
+    double second;
+    char *name;
 } t_fractol;
 
 
-int create_window(t_fractol *fracto, char *av[], double first, double second);
+int create_window(t_fractol *fracto, char *av[]);
 // int create_window(t_fractol *fractol, char *name);
 void ft_putstr(char *str);
 void user_interface(void);

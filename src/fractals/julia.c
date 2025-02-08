@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 17:44:20 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/08 18:22:32 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:36:46 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ int julia_iteration(double x, double y, t_fractol *fractol)
     t_fractol z;
     z.imag = y;
     z.real = x;
-
+    // printf("%f\n", fractol->first);
+    
     int i = 0;
     while (z.real * z.real + z.imag * z.imag <= 4 && i < 70)
     {
-        double temp_real = z.real * z.real - z.imag * z.imag + 0.285;
-        z.imag = 2 * z.real * z.imag + (0.01);
+        double temp_real = z.real * z.real - z.imag * z.imag + (fractol->first);
+        z.imag = 2 * z.real * z.imag + (fractol->second);
         z.real = temp_real;
         i++;
     }
@@ -30,20 +31,23 @@ int julia_iteration(double x, double y, t_fractol *fractol)
 }
 int julia(t_fractol *fractol)
 {
+
     double i = 0, j;
     t_fractol f;
     t_fractol img;
     int itr = 0;
 
-    if (fractol->x_min == 0 && fractol->x_max == 0)
-    {
-        fractol->x_min = -2.0;
-        fractol->x_max = 2.0;
-        fractol->y_min = 2.0;
-        fractol->y_max = -2.0;
-    }
+    // if (fractol->x_min == 0 && fractol->x_max == 0)
+    // {
+    //     fractol->x_min = -2.0;
+    //     fractol->x_max = 2.0;
+    //     fractol->y_min = 2.0;
+    //     fractol->y_max = -2.0;
+    // }
 
     img.img = mlx_new_image(fractol->mlx, fractol->widht, fractol->height);
+
+    
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
     if (!img.addr)
     {
@@ -55,9 +59,10 @@ int julia(t_fractol *fractol)
         j = 0;
         while (j < fractol->widht)
         {
+   
             f.real = get_x(j, fractol);
             f.imag = get_y(i, fractol);
-            itr = julia_iteration(f.real, f.imag, &f);
+            itr = julia_iteration(f.real, f.imag, fractol);
             int color = get_color(itr);
             my_mlx_pixel_put(&img, j, i, color);
             j++;
