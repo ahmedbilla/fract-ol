@@ -6,7 +6,7 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:44:11 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/08 22:12:28 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/20 20:17:35 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ double get_x(double j, t_fractol *fractol);
 double get_y(double i, t_fractol *fractol);
 int get_color(int x);
 void my_mlx_pixel_put(t_fractol *data, int x, int y, int color);
-
+void    user_interface_julia(void);
 #endif

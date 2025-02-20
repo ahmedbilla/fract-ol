@@ -6,16 +6,16 @@
 /*   By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:42:45 by ahbilla           #+#    #+#             */
-/*   Updated: 2025/02/08 22:37:43 by ahbilla          ###   ########.fr       */
+/*   Updated: 2025/02/20 20:21:24 by ahbilla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int ft_handle(char *s)
+int	ft_handle(char *s)
 {
-	int i;
-	int dot_count;
+	int	i;
+	int	dot_count;
 
 	dot_count = 0;
 	i = 0;
@@ -40,10 +40,9 @@ int ft_handle(char *s)
 	return (0);
 }
 
-int main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
-
-	t_fractol fractol;
+	t_fractol	fractol;
 	if ((ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0) || (ac == 4 && ft_strcmp(av[1], "julia") == 0))
 	{
 		fractol.x_min = -2.0;
@@ -52,10 +51,13 @@ int main(int ac, char *av[])
 		fractol.y_max = -2.0;
 		if ((ac == 4 && ft_strcmp(av[1], "julia") == 0))
 		{
-			fractol.first = ft_atoi(av[2], 1.0);
-			fractol.second = ft_atoi(av[3], 1.0);
+			if(ft_handle(av[2]) || ft_handle(av[3]))
+			{
+				return user_interface_julia(), 1;
+			}
+				fractol.first = ft_atoi(av[2], 1.0);
+				fractol.second = ft_atoi(av[3], 1.0);
 		}
-
 		fractol.name = av[1];
 		if (create_window(&fractol, &av[1]) == 1)
 			return write(2, "\033[31mWindow creation failed!\033[0m\n", 39), 1;
