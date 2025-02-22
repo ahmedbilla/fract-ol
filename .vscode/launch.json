@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/mnt/homes/ahbilla/Desktop/fract-ol/src/utils",
+      "program": "/mnt/homes/ahbilla/Desktop/fract-ol/src/utils/build/Debug/outDebug"
+    }
+  ]
+}

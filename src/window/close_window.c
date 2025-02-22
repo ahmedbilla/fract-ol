@@ -12,19 +12,22 @@
 
 #include "../../include/fractol.h"
 
-int close_window(int keycode)
+int	close_window(int keycode, t_fractol *fract)
 {
-    if (keycode == 53)
-    {
-        write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-        exit(0);
-    }
-    return 0;
+	if (keycode == 53)
+	{
+		mlx_destroy_image(fract->mlx, fract->img);
+		mlx_destroy_window(fract->mlx, fract->mlx_window);
+		write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
+		exit(0);
+	}
+	return (0);
 }
 
-int close_cross(t_fractol *fract)
+int	close_cross(t_fractol *fract)
 {
-    mlx_destroy_window(fract->mlx, fract->mlx_window);
-    write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
-    exit(1);
+	mlx_destroy_image(fract->mlx, fract->img);
+	mlx_destroy_window(fract->mlx, fract->mlx_window);
+	write(1, "\033[1;33mWindow closed!\n\033[0m", 24);
+	exit(0);
 }

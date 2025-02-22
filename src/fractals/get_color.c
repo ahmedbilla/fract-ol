@@ -12,10 +12,10 @@
 
 #include "../../include/fractol.h"
 
-int get_color(int x)
+int	get_color(int x)
 {
-    if (x == 70)
-        return (0);
-    else
-        return ((x * 255) / 70) << 10;
+	if (x == 70)
+		return (0);
+	else
+		return (((x * 255) / 70) << 10);
 }

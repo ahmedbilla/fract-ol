@@ -12,17 +12,17 @@
 
 #include "../../include/fractol.h"
 
-void    user_interface_julia(void)
+void	user_interface_julia(void)
 {
-    ft_putstr("╔══════════════════════════════════════════╗\n");
-    ft_putstr("║      Usage: ./fractol julia <x> <y>      ║\n");
-    ft_putstr("╚══════════════════════════════════════════╝\n");
-    ft_putstr("           ╔════════════════════╗           \n");
-    ft_putstr("╔══════════╣ Important Notice   ╠══════════╗\n");
-    ft_putstr("║          ╚════════════════════╝          ║\n");
-    ft_putstr("║                                          ║\n");
-    ft_putstr("║      - Inputs must be numbers only       ║\n");
-    ft_putstr("║                                          ║\n");
-    ft_putstr("╚══════════════════════════════════════════╝\n");
-    exit(0);
+	ft_putstr("╔══════════════════════════════════════════╗\n");
+	ft_putstr("║      Usage: ./fractol julia <x> <y>      ║\n");
+	ft_putstr("╚══════════════════════════════════════════╝\n");
+	ft_putstr("           ╔════════════════════╗           \n");
+	ft_putstr("╔══════════╣ Important Notice   ╠══════════╗\n");
+	ft_putstr("║          ╚════════════════════╝          ║\n");
+	ft_putstr("║                                          ║\n");
+	ft_putstr("║      - Inputs must be numbers only       ║\n");
+	ft_putstr("║                                          ║\n");
+	ft_putstr("╚══════════════════════════════════════════╝\n");
+	exit(0);
 }

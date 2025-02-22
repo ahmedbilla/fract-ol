@@ -12,12 +12,12 @@
 
 #include "../../include/fractol.h"
 
-double get_x(double j, t_fractol *fractol)
+double	get_x(double j, t_fractol *fractol)
 {
-    return (fractol->x_min + (j / 800.00) * (fractol->x_max - fractol->x_min));
+	return (fractol->x_min + (j / 800.00) * (fractol->x_max - fractol->x_min));
 }
 
-double get_y(double i, t_fractol *fractol)
+double	get_y(double i, t_fractol *fractol)
 {
-    return (fractol->y_max - (i / 800.00) * (fractol->y_max - fractol->y_min));
+	return (fractol->y_max - (i / 800.00) * (fractol->y_max - fractol->y_min));
 }

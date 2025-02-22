@@ -25,5 +25,5 @@ void	user_interface(void)
 	ft_putstr("║                julia x y                 ║\n");
 	ft_putstr("║                                          ║\n");
 	ft_putstr("╚══════════════════════════════════════════╝\n");
-    exit(0);
+	exit(0);
 }

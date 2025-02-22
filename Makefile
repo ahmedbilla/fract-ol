@@ -6,7 +6,7 @@
 #    By: ahbilla <ahbilla@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 21:53:47 by ahbilla           #+#    #+#              #
-#    Updated: 2025/02/20 20:20:51 by ahbilla          ###   ########.fr        #
+#    Updated: 2025/02/22 22:30:40 by ahbilla          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS = ${SRCS:.c=.o}
 NAME = fractol
 CC = cc
 RM = rm -f
-# CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror 
 
 all: ${NAME}
 
@@ -42,8 +42,6 @@ all: ${NAME}
 %.o:%.c include/fractol.h
 	${CC} ${CFLAGS} -Imlx -c $< -o $@
 
-# ${NAME}: ${OBJS}
-# 	${CC} ${CFLAGS} $(OBJS) -o game
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	
